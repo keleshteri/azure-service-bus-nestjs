@@ -28,10 +28,9 @@ export class AzureServiceBusModule {
           provide: 'AZURE_SERVICE_BUS_CONNECTION',
           useFactory: async (configService: ConfigService) => {
             try {
-              const connectionString = configService.get<string>(
-                'azure.serviceBus.connectionString' ||
-                  'AZURE_SERVICE_BUS_CONNECTION_STRING',
-              );
+              const connectionString =
+                configService.get<string>('azure.serviceBus.connectionString') ||
+                configService.get<string>('AZURE_SERVICE_BUS_CONNECTION_STRING');
               return new ServiceBusClient(connectionString);
             } catch (error) {
               this.logger.warn('Failed to create ServiceBusClient:');

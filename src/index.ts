@@ -10,6 +10,7 @@ import { AzureServiceBusConfig } from "./configs";
 import { AZURE_SERVICE_BUS_EVENT_EXPLORER, SB_SUBSCRIBER_METADATA } from "./constants";
 import { Receiver, Sender } from "./decorators";
 import { MicrosoftStorage } from "./enums";
+import { EventBusModule } from "./event-bus.module";
 import { AzureBlobEvent } from "./interfaces";
 
 export {
@@ -22,5 +23,6 @@ export {
     AzureSBOptions,
     AzureBlobEvent,
     AzureSBSenderReceiverOptions,
-    AzureServiceBusModule
+    AzureServiceBusModule,
+    EventBusModule  
 }
